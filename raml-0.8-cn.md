@@ -1,8 +1,6 @@
 RAML&trade; Version 0.8: RESTful API Modeling Language
 ===================================
 
-<!-- MarkdownTOC depth=0 -->
-
 - Abstract
 - Introduction
 - Conventions
@@ -28,7 +26,7 @@ RAML&trade; Version 0.8: RESTful API Modeling Language
   - required
   - default
 - Named Parameters With Multiple Types
-- ##<a name="BasicInformation"/>Basic Information
+- Basic Information
   - Root Section
   - API Title
   - API Version
@@ -37,8 +35,8 @@ RAML&trade; Version 0.8: RESTful API Modeling Language
   - Default Media Type
   - Schemas
   - URI Parameters
-  - <a name="UserDocumentation"/>User Documentation
-  - <a name="Resources"/>Resources and Nested Resources
+  - User Documentation
+  - Resources and Nested Resources
     - Display Name
     - Description
     - Template URIs and URI Parameters
@@ -58,7 +56,7 @@ RAML&trade; Version 0.8: RESTful API Modeling Language
         - Example
       - Responses
         - Headers
-  - <a name="ResourceTypesandTraits"/>Resource Types and Traits
+  - Resource Types and Traits
     - Declaration
       - Usage
       - Parameters
@@ -78,7 +76,6 @@ RAML&trade; Version 0.8: RESTful API Modeling Language
   - Normative References
   - Informative References
 
-<!-- /MarkdownTOC -->
 
 Abstract
 --------
