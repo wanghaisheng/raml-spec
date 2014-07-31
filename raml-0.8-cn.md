@@ -1,6 +1,84 @@
 RAML&trade; Version 0.8: RESTful API Modeling Language
 ===================================
 
+<!-- MarkdownTOC depth=0 -->
+
+- Abstract
+- Introduction
+- Conventions
+- Overview
+  - Terminology
+  - REST
+  - Resource
+- Markup Language
+  - Includes
+- Named Parameters
+  - displayName
+  - description
+  - type
+    - Date Representations
+  - enum
+  - pattern
+  - minLength
+  - maxLength
+  - minimum
+  - maximum
+  - example
+  - repeat
+  - required
+  - default
+- Named Parameters With Multiple Types
+- ##<a name="BasicInformation"/>Basic Information
+  - Root Section
+  - API Title
+  - API Version
+  - Base URI and baseUriParameters
+  - Protocols
+  - Default Media Type
+  - Schemas
+  - URI Parameters
+  - <a name="UserDocumentation"/>User Documentation
+  - <a name="Resources"/>Resources and Nested Resources
+    - Display Name
+    - Description
+    - Template URIs and URI Parameters
+    - Base URI parameters
+    - Absolute URI
+    - Methods
+      - Description
+      - Headers
+        - Example
+      - Protocols
+      - Query Strings
+        - Example
+      - Body
+        - Web Forms
+        - Example
+        - Schema
+        - Example
+      - Responses
+        - Headers
+  - <a name="ResourceTypesandTraits"/>Resource Types and Traits
+    - Declaration
+      - Usage
+      - Parameters
+      - Optional Properties
+    - Applying Resource Types and Traits
+- Security
+  - Declaration
+    - Description
+    - Type
+    - describedBy
+    - Settings
+      - OAuth 1.0
+      - OAuth 2.0
+      - Other
+  - Usage: Applying a Security Scheme to an API
+- References
+  - Normative References
+  - Informative References
+
+<!-- /MarkdownTOC -->
 
 Abstract
 --------
@@ -29,10 +107,10 @@ RAML also introduces the innovative concept of resource types and traits for cha
 
 This RAML Specification is organized as follows:
 
-* **Basic Information.** Explains how to describe core aspects of a RESTful API, such as is name, title, and location.
-* **User Documentation.** Describes how to include supporting documentation for the RESTful API.
-* **Resource Types and Traits.** Describes the optional mechanism for using RAML resource types and traits to characterize resources so as to avoid unnecessary repetition in the RESTful API's definition.
-* **Resources.** Describes how to specify a RESTful API's resources, resources' methods and schema, and the interactions between resources.
+* **[Basic Information.](#BasicInformation)** Explains how to describe core aspects of a RESTful API, such as is name, title, and location.
+* **[User Documentation.](#UserDocumentation)** Describes how to include supporting documentation for the RESTful API.
+* **[Resource Types and Traits.](#ResourceTypesandTraits)** Describes the optional mechanism for using RAML resource types and traits to characterize resources so as to avoid unnecessary repetition in the RESTful API's definition.
+* **[Resources.](#Resources)** Describes how to specify a RESTful API's resources, resources' methods and schema, and the interactions between resources.
 
 RAML is a trademark of MuleSoft, Inc.
 
@@ -235,7 +313,7 @@ baseUri: https://{destinationBucket}.s3.amazonaws.com
             - type: file
               description: File to upload. The file must be the last field in the form.
 ```
-Basic Information
+##<a name="BasicInformation"/>Basic Information                 
 -----------------
 
 This section describes the components of a RAML API definition.
@@ -407,7 +485,7 @@ uriParameters:
    minLength: 1
 ```
 
-### User Documentation
+### <a name="UserDocumentation"/>User Documentation                         
 (Optional)
 The API definition can include a variety of documents that serve as a user guides and reference documentation for the API. Such documents can clarify how the API works or provide business context.
 
@@ -464,7 +542,7 @@ documentation:
  - title: Rendering Data as Graphs
    content: !include github-3-rendering-data-as-graphs.md
 ```
-### Resources and Nested Resources
+### <a name="Resources"/>Resources and Nested Resources                                                           
 
 Resources are identified by their relative URI, which MUST begin with a slash (/).
 
@@ -1148,7 +1226,7 @@ In the following example, the header x-metadata-{?} is used to send metadata tha
               Field names prefixed with x-meta- contain user-specified metadata.
 ```
 
-### Resource Types and Traits
+### <a name="ResourceTypesandTraits"/>Resource Types and Traits     
 
 Resource and method declarations are frequently repetitive. For example, if an API requires OAuth authentication, the API definition must include the *access_token* query string parameter (which is defined by the *queryParameters* property) in all the API's resource method declarations.
 
